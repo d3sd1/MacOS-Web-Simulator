@@ -1,0 +1,814 @@
+/* Se puede apreciar que para este apartado se ha usado # (selector de ID) en lugar de . (selector de clase).
+Esto se debe a que JavaScript interactúa de modo directo con los selectores de ID,
+y en este apartado es en el único que se tiene JavaScript */
+/*----- Animaciones -----*/
+@-webkit-keyframes blinking { /* Efecto oleaje para los botones */
+	/* Animación del 0 al 50% de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Cambiar sombra interna (así como su color) del elemento */
+		-webkit-box-shadow: inset 0 19px 0 rgba(0,115,215,0), inset 0 1px 0 rgba(255,255,255,1), 0 1px 0 rgba(0,0,0,0.09)
+	}
+	/* Animación del 50 al 100% de la carga total de los segundos definidos al llamar a la animación */
+	50% {
+		/* Cambiar sombra interna (así como su color) del elemento */
+		-webkit-box-shadow: inset 0 19px 0 rgba(0,115,215,0.2), inset 0 1px 0 rgba(255,255,255,1), 0 1px 0 rgba(0,0,0,0.09)
+	}
+	/* Animación al final de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Cambiar sombra interna (así como su color) del elemento */
+		-webkit-box-shadow: inset 0 19px 0 rgba(0,115,215,0), inset 0 1px 0 rgba(255,255,255,1), 0 1px 0 rgba(0,0,0,0.09)
+	}
+}
+@-webkit-keyframes bounce { /* Efecto agitar */
+	  0% {
+		/* Mantener verticalmente */
+		-webkit-transform: translateY(0)
+	  }
+	100% {
+		/* Mover verticalmente */
+		-webkit-transform: translateY(-20px)
+	}
+}
+@-webkit-keyframes parpadeo{  /* Efecto parpadeo para el virus */
+  0% {
+	  /* Mantener visible */
+	opacity: 1.0
+  }
+  50% {
+	  /* Hacer invisible */
+	opacity: 0.0
+  }
+  100% {
+	  /* Volver a hacer visible */
+	opacity: 1.0
+  }
+}
+@-webkit-keyframes rotate { /* Efecto giro infinito para el virus */
+    from {
+		/* Mover a posición original */
+		-webkit-transform: rotate(0deg)
+	}
+    to {
+		/* Volver a mover una vez más */
+		-webkit-transform: rotate(360deg)
+	}
+}
+/*----- Diseño -----*/
+#escritorio {
+	cursor:  url(../cursor/normal.cur) 2 2, pointer;
+	background: url(../images/escritorio/background.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: -1;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
+}
+#escritorio.vis {
+	visibility: visible;
+	opacity: 1;
+	z-index: 0;
+	-webkit-animation: none
+}
+#cabecera.vis {
+	visibility: visible;
+	opacity: 1;
+	z-index: 1000;
+	-webkit-animation: none
+}
+#cabecera {
+	visibility: hidden;
+	opacity: 0;
+	background: #e9e9e9;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e9e9e9), color-stop(100%,#bbbabb));
+	width: 100%;
+	height: 21px;
+	position: fixed;
+	z-index: 1000;
+	border-bottom: 1px solid #444444;
+	box-shadow: 0px 0px 10px #141414;
+	-webkit-user-select: none;
+	user-select: none
+}
+#cabecera nav#menuSuperiorDerecho{
+	position: absolute;
+	right: 10px;
+	top: 0;
+	line-height: 21px
+}
+#cabecera nav#menuSuperiorDerecho ul {
+	margin: 0;
+	padding: 0
+}
+#cabecera nav#menuSuperiorDerecho ul li {
+	float: left;
+	position: relative;
+	height: 21px
+}
+#cabecera nav#menuSuperiorDerecho ul li.wifi a {
+	background: url(../images/escritorio/wifi.png) 6px 2px no-repeat;
+    display: block;
+    position: relative;
+    text-indent: -9999px;
+	width: 25px;
+	height: 21px;
+	top: 0px;
+	padding: 0 5px
+}
+#cabecera nav#menuSuperiorDerecho ul li.usuario a {
+	font-weight:bold
+}
+#cabecera nav#menuSuperiorDerecho ul li.tiempo {
+	font-size: 13px; 
+	color: #000;
+	text-shadow: 0 1px 1px #dbdbdb;
+	padding: 0 5px
+}
+#cabecera nav#menuSuperiorDerecho ul li.tiempo #fechaMenu {
+	padding-right: 5px
+}
+#cabecera nav#menuSuperiorDerecho ul li a {
+	display: block;
+	color: #000;
+	font-size: 13px;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #dbdbdb;
+	padding: 0 5px;
+	font-weight: 400
+}
+
+#cabecera nav#menu{
+	position: absolute;
+	left: 10px;
+	top: 0;
+	line-height: 21px
+}
+#cabecera nav#menu ul {
+	margin: 0;
+	padding: 0
+}
+#cabecera nav#menu ul li {
+	float: left;
+	position: relative;
+	height: 21px
+}
+#cabecera nav#menu ul li.apple a {
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	background:url(../images/escritorio/apple-logo.png) no-repeat 10px 1px;
+    display: block;
+    position: relative;
+    text-indent: -9999px;
+    top: 0;
+	padding:0 10px 0 10px;
+    width: 20px;
+	height: 21px
+}
+#cabecera nav#menu ul li a {
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	display: block;
+	color: #000;
+	font-size: 13px;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #dbdbdb;
+	padding: 0 10px;
+	font-weight: 400
+}
+#cabecera nav#menu ul li.activo a {
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	font-weight: bold
+}
+#cabecera nav#menu ul li:hover {
+	background: #7793f5;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7793f5), color-stop(50%,#406df2), color-stop(100%,#275af1));
+	border-bottom: 1px solid #1746d7
+}
+#cabecera nav#menu ul li:hover a {
+	color: #fff;
+	text-shadow: none
+}
+#cabecera nav#menu ul li.apple:hover a {
+	background-position: 10px -19px
+}
+
+#cabecera nav#menu ul li ul.subMenu {
+	float: left;
+    left: 0;
+	top: 22px;
+	list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+	background: rgba(255,255,255,0.95);
+	box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+	border-radius: 0 0 5px 5px;
+	visibility: hidden
+}
+#cabecera nav#menu ul li ul.subMenu li {
+    clear: both;
+    padding: 0;
+	margin: 0;
+	padding: 0 0 0 22px;
+	width: 200px;
+	font-size: 13px;
+	line-height: 20px
+}
+#cabecera nav#menu ul li:hover ul.subMenu {
+	visibility: visible
+}
+#cabecera nav#menu ul li ul.subMenu li:hover {
+	color: #fff
+}
+#cabecera nav#menu ul li ul.subMenu li a {
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	color: #000;
+	text-indent: 0;
+    width: 200px;
+	background-image: none;
+	padding: 0;
+	font-weight: normal;
+	display: block
+}
+#cabecera nav#menu ul li ul.subMenu li:hover a {
+	color: #fff
+}
+#cabecera nav#menu ul li ul.subMenu li:first-child {
+	margin: 5px 0 0 0
+}
+#cabecera nav#menu ul li ul.subMenu li:last-child {
+	margin: 0 0 5px 0
+}
+#cabecera nav#menu ul li ul.subMenu li.lineaDivisoria {
+	border-top: 1px solid #e2e2e2;
+	height: 1px;
+	background: none;
+	margin: 5px 0 4px 0
+}
+#cabecera nav#menu ul li ul.subMenu li.lineaDivisoria:hover {
+	border-top: 1px solid #e2e2e2
+}
+#cabecera nav#menu ul li ul.subMenu li:hover {
+	border: none
+}
+#cabecera nav#menu ul li ul.subMenu li.desactivado {
+	color: #969696
+}
+#cabecera nav#menu ul li ul.subMenu li.desactivado:hover {
+	background: none
+}
+#cabecera nav#menu ul li ul.subMenu li span.flecha {
+	position: relative;
+	display: inline-block;
+	width: 0;
+	height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent; 
+    border-left: 9px solid rgba(0,0,0,0.5);
+	top: 5px;
+	right: 10px;
+	text-indent: -9999px;
+	float: right
+}
+#cabecera nav#menu ul li ul.subMenu li:hover span.flecha {
+	border-left-color: #fff
+}
+#cabecera nav#menu ul li ul.subMenu li.desactivado span.flecha, #cabecera nav#menu ul li ul.subMenu li.desactivado:hover span.flecha {
+	border-left-color: rgba(0,0,0,0.35)
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado {
+	float: left;
+    left: 100%;
+	top: -5px;
+	list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+	background: rgba(255,255,255,0.95);
+	box-shadow: 4px 9px 12px rgba(0,0,0,0.7);
+	border-radius: 0 5px 5px 5px;
+	visibility: hidden;
+	color: #000
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado li {
+    clear: both;
+    padding: 0;
+	margin: 0;
+	padding: 0 0 0 22px;
+	width: 200px;
+	font-size: 13px;
+	line-height: 20px
+}
+#cabecera nav#menu ul li ul.subMenu li:hover ul.subMenuAmpliado {
+	visibility: visible
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado li:hover {
+	color: #fff
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado li:first-child {
+	margin: 5px 0 0 0
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado li:last-child {
+	margin: 0 0 5px 0
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado li.lineaDivisoria {
+	border-top: 1px solid #e2e2e2;
+	height: 1px;
+	background: none;
+	margin: 5px 0 4px 0
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado li.lineaDivisoria:hover {
+	border-top: 1px solid #e2e2e2
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado li:hover {
+	border: none
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado li.desactivado {
+	color: #969696
+}
+#cabecera nav#menu ul li ul.subMenu li ul.subMenuAmpliado li.desactivado:hover {
+	background: none
+}
+a.boton.sobreElPC {
+	width:118px
+}
+a.boton {
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+	font-size: 11px;
+	border-radius: 4px;
+	border: 1px solid #9a9a9a;
+	text-decoration: none;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-weight: normal;
+	color: #000;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.09);
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #EBEBEB),color-stop(0.5, #ECECEC),color-stop(0.5, #F3F3F3),color-stop(1, #FFFFFF));
+	box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 1px 0 rgba(0,0,0,0.09)
+}
+
+a.boton:active {
+	box-shadow: inset 0 16px 0 rgba(0,115,215,0.3), inset 0 1px 0 rgba(255,255,255,1), 0 1px 0 rgba(0,0,0,0.09);
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, #D3F7FD), color-stop(0.5, #87C5FB), color-stop(0.5, #A1D1F9), color-stop(1, #D4E9FC));
+	border-top-color: #5a5caf;
+	border-bottom-color: #52536f;
+	border-left-color: #56578f;
+	border-right-color: #56578f
+}
+
+a.boton.blink {
+	height: 19px;
+	line-height: 19px;
+	font-size: 12px;
+	text-align: center;
+	float: right;
+	margin: 10px 0 10px 15px;
+	padding: 0 20px;
+	box-shadow: inset 0 19px 0 rgba(0,115,215,0.3), inset 0 1px 0 rgba(255,255,255,1), 0 1px 0 rgba(0,0,0,0.09);
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, #D3F7FD), color-stop(0.5, #87C5FB), color-stop(0.5, #A1D1F9), color-stop(1, #D4E9FC));
+	border-top-color: #5a5caf;
+	border-bottom-color: #52536f;
+	border-left-color: #56578f;
+	border-right-color: #56578f;
+	-webkit-animation: blinking 1s infinite ease-in-out
+}
+a.boton.simple {
+	height: 19px;
+	line-height: 19px;
+	font-size: 12px;
+	text-align: center;
+	float: right;
+	margin: 10px 0 10px 15px;
+	padding: 0 20px;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,1), 0 1px 0 rgba(0,0,0,0.09);	
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #EBEBEB),color-stop(0.5, #ECECEC),color-stop(0.5, #F3F3F3),color-stop(1, #FFFFFF))
+}
+a.boton.blink:active, a.boton.simple:active {
+	box-shadow: inset 0 19px 0 rgba(0,115,215,0.3), inset 0 1px 0 rgba(255,255,255,1), 0 1px 0 rgba(0,0,0,0.09);
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, #D3F7FD), color-stop(0.5, #87C5FB), color-stop(0.5, #A1D1F9), color-stop(1, #D4E9FC));
+	border-top-color: #5a5caf;
+	border-bottom-color: #52536f;
+	border-left-color: #56578f;
+	border-right-color: #56578f;
+	-webkit-animation: none
+}
+#dock {
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+	width: 100%;
+	text-align: center
+}
+#dock ul {
+	position: relative;
+	display: inline-block;
+	padding: 0 5px;
+	margin: 0;
+	background:url(../images/escritorio/dock-bg.png) repeat-x bottom
+}
+#dock ul:before, #dock ul:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 38px
+}
+#dock ul:before {
+	left: -38px;
+	background: url(../images/escritorio/dock-bg-left.png) no-repeat left bottom
+}
+#dock ul:after {
+	right: -38px;
+	background: url(../images/escritorio/dock-bg-right.png) no-repeat right bottom
+}
+#dock li {
+	display: inline-block;
+	position: relative;
+	margin: 0 0 15px 0;
+	-webkit-box-reflect: below -16px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(91%, rgba(255, 255, 255, .1)), color-stop(91.01%, transparent), to(transparent))
+}
+#dock a {
+	display: block;
+	cursor: default;
+	outline: none
+}
+#dock em {
+	position: absolute;
+	top: -34px;
+	left: 50%;
+	display: none;
+	width: 150px;
+	margin-left: -75px;
+	text-align: center
+}
+#dock em:after {
+	content: " ";
+	position: absolute;
+	bottom: -6px;
+	left: 50%;
+	margin-left: -6px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid rgba(0, 0, 0, 0.6);
+	border-bottom: none
+}
+#dock em span {
+	display: inline-block;
+	padding: 5px 12px;
+	background: rgba(0, 0, 0, 0.6);
+	font-style: normal;
+	font-size: 12px;
+	color: #fff;
+	text-shadow: 0 1px 1px #000;
+	border-radius: 10px
+}
+#dock li:hover em {
+	display: block
+}
+#dock img {
+	width: 48px;
+	height: auto;
+	border: none;
+	-webkit-transition: all 0.1s linear
+}
+#dock li.ok:hover img {
+	width: 128px;
+	-webkit-transition: all 0.15s linear
+}
+#dock li.prev img, #dock li.next img {
+	width: 96px;
+	-webkit-transition: all 0.15s linear
+}
+#dock li.prev-ancor img, #dock li.next-ancor img {
+	width: 72px;
+	-webkit-transition: all 0.15s linear
+}
+#dock li a .fresh {
+	content: " ";
+	position: absolute;
+	bottom: -8px;
+	left: 50%;
+	width: 8px;
+	height: 6px;
+	opacity: 1;
+	background-color: rgba(255, 255, 255, .8);
+	margin-left: -2px;
+	border-radius: 100%;
+	box-shadow: inset 0 1px 3px rgba(75, 255, 255, .4), 0 0 4px rgba(75, 255, 255, .5), 0 -1px 7px rgb(75, 255, 255);
+	-webkit-box-reflect: below 5px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(91%, rgba(255, 255, 255, 0.5)), color-stop(91.01%, transparent), to(transparent))
+}
+.bounce {
+	-webkit-animation: bounce 0.4s 4 alternate ease-out
+}
+.ventana {
+    background: -webkit-linear-gradient(rgba(233, 233, 233, 1.0), rgba(178, 178, 178, 1.0) 21px, #EDEDED, #EDEDED 23px);
+	border-radius: 5px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 22px 70px 4px rgba(0,0,0,0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    position: absolute;
+	z-index: 0;
+	visibility: hidden;
+	opacity: 0
+}
+.ventana.ventanas-vis {
+	visibility: visible;
+	opacity: 1
+}
+.contenedor {
+	position: relative;
+	border-top: 1px solid #656565
+}
+.subContenedor {
+	position: relative;
+	padding: 20px 30px;
+	text-align: center
+}
+img.virusErasto {
+	-webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+	width: 70%;
+    margin: 30px
+}
+p.hackeado {
+	-webkit-animation-name: parpadeo;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	text-align: center;
+	color: #71d90b;
+	text-transform: uppercase;
+	font-size: 28px
+}
+
+h1.titleInside {
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+    position: relative;
+    z-index: 2;
+	color: #3c3c3c;
+	font-size: 13px;
+	line-height: 21px;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #e7e7e7;
+	text-align: center;
+	text-transform: capitalize
+}
+nav.controlesDeVentana {
+	position: absolute;
+	left: 5px;
+	top: 3px;
+	z-index: 10;
+	height: 19px
+}
+nav.controlesDeVentana a {
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+    display: inline-block;
+    margin: 2px 0px 3px 1px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    box-shadow: 0px 1px 0px rgba(255,255,255,.5);
+    text-indent: -9999px;
+    position: relative
+}
+nav.controlesDeVentana a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, .8);
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px
+}
+nav.controlesDeVentana a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    bottom: 1px;
+    right: 1px;
+    border-radius: 100%;
+    background: -webkit-linear-gradient(white, rgba(255, 255, 255, .9) 2%, white, rgba(255, 255, 255, .4) 16%, rgba(255, 255, 255, 0) 43%, rgba(255, 255, 255, .74), rgba(255, 255, 255, .7) 122%, rgba(255, 255, 255, .7));
+	box-shadow: inset 0px -3px -5px 3px rgba(255, 255, 255, 0.2), inset 0px 2px -5px 3px rgba(255, 255, 255, 0.2)
+}
+nav.controlesDeVentana a.cerrarVentana {
+    background: #FD4E4E
+}
+nav.controlesDeVentana:hover a.cerrarVentana {
+	background: #FD4E4E url(../images/botons-hover.png) 1px 1px no-repeat
+}
+nav.controlesDeVentana a.cerrarVentana:active {
+    background: #c72f2b url(../images/botons-hover.png) 1px 1px no-repeat
+}
+nav.controlesDeVentana a.minimizarVentana {
+	cursor:  url(../cursor/disabled.cur) 2 2, pointer;
+    background: #F3BB55
+}
+nav.controlesDeVentana:hover a.minimizarVentana {
+    background: #F3BB55 url(../images/botons-hover.png) -9px 1px no-repeat
+}
+nav.controlesDeVentana a.minimizarVentana:active {
+    background: #c7862c url(../images/botons-hover.png) -9px 1px no-repeat
+}
+nav.controlesDeVentana a.maximizarVentana {
+	cursor:  url(../cursor/disabled.cur) 2 2, pointer;
+    background: #96D16F
+}
+nav.controlesDeVentana:hover a.maximizarVentana {
+    background: #96D16F url(../images/botons-hover.png) -19px 1px no-repeat
+}
+nav.controlesDeVentana a.maximizarVentana:active {
+    background: #4a8e33 url(../images/botons-hover.png) -19px 1px no-repeat
+}
+nav.controlesDeVentana a.deactivate {
+    background: #b5b5b5
+}
+.subContenedor h2 {
+	color: #000;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 13px;
+	margin-bottom: 15px
+}
+.subContenedor img {
+	margin: 0 0 10px 0
+}
+.subContenedor .masInfo {
+	margin-bottom: 30px
+}
+.subContenedor .masInfo p.small {
+	font-size: 11px;
+	margin-top: 15px
+}
+.subContenedor .copyright {
+	font-size: 11px
+}
+.subContenedor .copyright p:first-child {
+	margin-bottom: 6px
+}
+
+.ventana.mac {
+	width: 308px;
+	left: 20%;
+	top: 10%;
+	margin: 0px 0 0 -154px;
+	background: -webkit-linear-gradient(rgba(233, 233, 233, 1.0), rgba(178, 178, 178, 1.0) 16px, #EDEDED, #EDEDED 16px);
+	border-radius: 0;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 4px 4px rgba(0,0,0,0.48), 0 0 0 1px rgba(0, 0, 0, 0.3)
+}
+.ventana.erasto {
+	width: 308px;
+	left: 50%;
+	top: 20%;
+	margin: 0px 0 0 -154px;
+	background: -webkit-linear-gradient(rgba(233, 233, 233, 1.0), rgba(178, 178, 178, 1.0) 16px, #EDEDED, #EDEDED 16px);
+	border-radius: 0;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 4px 4px rgba(0,0,0,0.48), 0 0 0 1px rgba(0, 0, 0, 0.3);
+	display: none;
+	z-index: 999
+}
+h1.nombreMAC {
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+    position: relative;
+    z-index: 2;
+	color: #3c3c3c;
+	font-size: 10px;
+	line-height: 15px;
+	top: 1px;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #e7e7e7;
+	text-align: center;
+	text-transform: capitalize
+}
+#esteMAC .subContenedor img, #project .subContenedor img, #spec .subContenedor img {
+	margin: 0 0 5px 0
+}
+#esteMAC .masInfo {
+	color: #848484;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0
+}
+#esteMAC .masInfo p:first-child {
+	margin: 0 0 10px 0
+}
+#project .masInfo p:first-child, #spec .masInfo p:first-child {
+	color: #848484;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 10px 0
+}
+#project .masInfo p {
+	margin: 15px 0;
+	font-size: 10px;
+	line-height: 14px
+}
+#project .subContenedor .masInfo, #spec .subContenedor .masInfo {
+	margin-bottom: 0px
+}
+.ventana.spec {
+	width: 300px;
+	left: 80%;
+	top: 25%;
+	margin: 0px 0 0 -150px
+}
+#share ul li {
+    float: left;
+    position: relative;
+    width: 130px;
+    margin-bottom: 20px
+}
+#spec .masInfo p {
+	margin: 5px 0;
+	font-size: 10px;
+	line-height: 14px
+}
+#spec .masInfo p strong {
+	margin: 5px 0;
+	font-size: 12px;
+	line-height: 12px
+}
+#esteMAC .masInfo ul.hardware {
+	margin: 15px 0;
+	padding: 0
+}
+#esteMAC .masInfo ul.hardware li {
+	list-style: none;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000;
+	margin-bottom: 15px;
+	text-align: left
+}
+#esteMAC .masInfo ul.hardware li strong {
+	float: left;
+	text-align: right;
+	width: 92px;
+	margin-right: 15px
+}
+#esteMAC .subContenedor .copyright {
+	margin-top: 15px;
+	font-size: 10px;
+	font-weight: normal
+}
+#esteMAC .subContenedor .copyright p:first-child {
+	margin-bottom: 6px
+}
+
+#esteMAC nav.controlesDeVentana {
+	height: 12px;
+	top: 2px
+}
+#esteMAC nav.controlesDeVentana a {
+    margin: 1px 0px 2px 1px;
+    width: 10px;
+    height: 10px
+}
+#esteMAC nav.controlesDeVentana a:after {
+    top: 1px
+}
+#esteMAC nav.controlesDeVentana:hover a.cerrarVentana {
+	background: #FD4E4E url(../images/botons-hover.png) 0px -7px no-repeat
+}
+#esteMAC nav.controlesDeVentana a.cerrarVentana:active {
+    background: #c72f2b url(../images/botons-hover.png) 0px -7px no-repeat
+}
+
+.ventana.precaucion {
+	width: 400px;
+	left: 50%;
+	top: 15%;
+	margin: 0px 0 0 -200px;
+	display: none;
+	z-index: 999
+}
+.tab {
+	height: 21px
+}
+.contenedorAlerta {
+    padding: 15px 20px;
+    position: relative
+}
+.contenedorAlerta img {
+	float: left
+}
+.sobreElPCAlerta {
+	width: 295px;
+	position: relative;
+	top: 5px;
+	display: inline-block;
+	line-height: 15px;
+	margin-left: 15px
+}
+.sobreElPCAlerta p {
+	font-size: 10px;
+	margin-top: 5px;
+	line-height: 14px
+}

@@ -1,0 +1,6 @@
+/* Importar hojas de estilo mediante CSS */
+/* Ejemplo: @import url("hojaDeEstilo.css") media; (Media define el tamaño y otras espeficicaciones por defecto de la hoja de estilo) */
+@import url("0_global.css") screen;
+@import url("1_inicio.css") screen;
+@import url("2_conexion.css") screen;
+@import url("3_escritorio.css") screen;

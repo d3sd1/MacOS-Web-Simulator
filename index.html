@@ -1,0 +1,499 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<!-- 0. Definir metadatos de la página -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
+		<title>MAC OS - Simulación</title>
+		<meta name="description" content="Un simulador online de MAC con memoria volátil."/>
+		<meta name="author" content="Andrei García Cuadra" />
+		<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/js/javascript.js"></script>
+
+		<link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+		<!-- 1. El navegador no es compatible -->
+		<noscript>
+			<div class="logoNavegadorNoCompatible">
+				<img src="assets/images/pantallaCarga/conexion.png"/>
+			</div>
+			<div class="cajaNavegadorNoCompatible">
+				<p><strong>Sintiéndolo mucho... ¡Tu navegador no es compatible!</strong></p> 
+				<p>Para usar el simulador de MAC, puedes descargar <a href="https://www.google.es/chrome/browser/escritorio/" target="descargarNavegadorCompatible">Google Chrome</a></p>
+			</div>
+		</noscript>
+	</head>
+
+<body>
+	<header>
+		<nav>
+			<!-- No hay navegador, sólo contenido y contenido. No tiene sentido poner aquí el dock o cualquier menú, ya que no son navegaciones estáticas -->
+		</nav>
+	</header>
+	
+	<section>
+		<!-- 2. Carga del sistema operativo -->
+		<article class="pantallaDeCarga">
+				<div class="logoDeApple"></div>
+				<div class="imagenCargando"></div>
+		</article>
+		<!-- 3. Página de conexión al panel -->
+		<article class="capaDeCarga">
+			<div class="difuminarFondo"></div>
+				<header class="barraSuperior">
+					<nav class="navegacion">
+					<ul>
+						<li class="wifi"></li>
+						<li class="tiempo">
+						<ul>
+							<li class="hora"> </li>
+							<li class="separadorHora">:</li>
+							<li class="min"> </li>
+						</ul>
+						</li>
+					</ul>
+					</nav>
+				</header>
+				<div class="logoDeAppleConexión"></div>
+				
+				<div class="perfilDeUsuario">
+					<div class="perfil1">
+						<a href="#hide" class="ocultar" id="hide"></a>
+						<a href="#show" class="mostrar" id="show"></a>
+						<div class="permitirOcultarConexion"></div>
+						<div class="imagenPerfil">
+							<img draggable="false" src="assets/images/conexion/profile.png" />
+						</div>
+						<div class="nombreUsuario">
+							<p>Andrei García Cuadra</p>
+						</div>
+						<div class="intercambiador">
+							<div class="validarConexion">
+								<form action="#escritorio">
+									<input type="password" autofocus placeholder="Contraseña" />
+									<input type="submit" class="submit" />
+									<div class="sugerenciaContraseña">
+										<p><b>Sugerencia de contraseña:</b> La de siempre.</p>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="perfil2">
+						<div class="imagenPerfil">
+							<img draggable="false" src="assets/images/conexion/profile2.jpg" />
+						</div>
+					</div>
+					<div class="perfil3">
+						<div class="imagenPerfil">
+							<img draggable="false" src="assets/images/conexion/profile3.jpg" />
+						</div>
+					</div>
+				</div>
+				<div class="botonesDeAccion">
+					<a href="#hibernarSistema" class="hibernarSistema" id="hibernarSistema">
+						<div class="hibernar">
+							<img draggable="false" src="assets/images/conexion/sleep.png" onclick="javascript:setTimeout(function () { window.onclick = function() {location.reload(true);}; }, 3000);"/>
+							<div class="texto">Hibernar</div>
+						</div>
+					</a>
+					<a href="#reiniciarSistema" class="reiniciarSistema" id="reiniciarSistema" onclick="javascript:setTimeout(function () { location.reload(true); }, 3000);">
+						<div class="reiniciar">
+							<img draggable="false" src="assets/images/conexion/reboot.png" />
+							<div class="texto">Reiniciar</div>
+						</div>
+					</a>
+					<a href="#apagarSistema" class="apagarSistema" id="apagarSistema">
+						<div class="apagar">
+							<img draggable="false" src="assets/images/conexion/shutdown.png" />
+							<div class="texto">Apagar</div>
+						</div>
+					</a>
+				</div>
+		</article>
+		<!-- 4. Escritorio -->
+		<article id="escritorio">
+			<!-- 4.1 Cabecera del escritorio (parte superior) -->
+			<header id="cabecera">
+				<nav id="menu">
+					<ul>
+					<li class="apple">
+						<a href="#">Apple</a>
+						<ul class="subMenu">
+						<li><a href="#esteMAC" data-rel="show">Sobre este MAC</a></li>
+						<li>Actualizaciones de software</li>
+						<li>App Store</li>
+						<li class="lineaDivisoria"></li>
+						<li>Preferencias del sistema</li>
+						<li>Dock
+							<span class="flecha"></span>
+							<ul class="subMenuAmpliado">
+							<li>Desactivar transiciones</li>
+							<li>Desactivar magnificación</li>
+							<li class="lineaDivisoria"></li>
+							<li>Posicionar a la izquierda</li>
+							<li>Posicionar abajo</li>
+							<li>Posicionar a la derecha</li>
+							<li class="lineaDivisoria"></li>
+							<li>Preferencias de barra Dock</li>
+							</ul>
+						</li>
+						<li class="lineaDivisoria"></li>
+						<li>Elementos recientes
+							<span class="flecha"></span>
+							<ul class="subMenuAmpliado">
+							<li class="desactivado">Aplicaciones</li>
+							<li class="lineaDivisoria"></li>
+							<li class="desactivado">Documentos</li>
+							<li class="lineaDivisoria"></li>
+							<li class="desactivado">Fotos</li>
+							<li class="lineaDivisoria"></li>
+							<li>Borrar historial</li>
+							</ul>
+						</li>
+						<li class="lineaDivisoria"></li>
+						<li>Forzar cierre</li></a>
+						<li class="lineaDivisoria"></li>
+						<li>Hibernar</li>
+						<li>Reiniciar</li>
+						<li>Apagar</li>
+						<li class="lineaDivisoria"></li>
+						<li>Cerrar sesión</li>
+						</ul>
+					</li>
+					<li class="activo">
+						<a href="#">Finder</a>
+						<ul class="subMenu">
+						<li><a href="#finder" data-rel="show">Sobre Finder</a></li>
+						<li class="lineaDivisoria"></li>
+						<li>Preferencias</li>
+						<li class="lineaDivisoria"></li>
+						<li>Proteger papelera</li>
+						<li class="lineaDivisoria"></li>
+						<li>Servicios
+							<span class="flecha"></span>
+							<ul class="subMenuAmpliado">
+							<li class="desactivado">Sin aplicaciones de servicio</li>
+							<li>Preferencias de servicios</li>
+							</ul>
+						</li>
+						<li class="lineaDivisoria"></li>
+						<li>Ocultar Finder</li>
+						<li>Ocultar otros</li>
+						<li class="desactivado">Mostrar todos</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Archivo</a>   
+						<ul class="subMenu">
+						<li>Nueva ventana de Finder</li>
+						<li>Nueva carpeta</li>
+						<li class="desactivado">Nueva carpeta con selector</li>
+						<li>Nueva carpeta inteligente</li>
+						<li>Nueva carpeta de grabado</li>
+						<li class="desactivado">Abrir</li>
+						<li class="desactivado">Abrir con...
+							<span class="flecha"></span>
+						</li>
+						<li class="desactivado">Imprimir</li>
+						<li class="desactivado">Cerrar ventaba</li>
+						<li class="lineaDivisoria"></li>
+						<li>Información del archivo</li>
+						<li class="lineaDivisoria"></li>
+						<li class="desactivado">Comprimir</li>
+						<li class="lineaDivisoria"></li>
+						<li class="desactivado">Duplicar</li>
+						<li class="desactivado">Crear alias</li>
+						<li class="desactivado">Vista rápida</li>
+						<li class="desactivado">Mostrar original</li>
+						<li class="desactivado">Añadir a Dock</li>
+						<li class="lineaDivisoria"></li>
+						<li class="desactivado">Enviar a la papelera</li>
+						<li class="desactivado">Expulsar</li>
+						<li>Grabar en disco</li>
+						<li class="lineaDivisoria"></li>
+						<li>Buscar</li>
+						</ul> 
+					</li>
+					<li>
+						<a href="#">Editar</a>
+						<ul class="subMenu">
+						<li class="desactivado">Deshacer</li>
+						<li class="desactivado">Rehacer</li>
+						<li class="lineaDivisoria"></li>
+						<li class="desactivado">Cortar</li>
+						<li class="desactivado">Copiar</li>
+						<li class="desactivado">Pegar</li>
+						<li>Seleccionar todo</li>
+						<li class="lineaDivisoria"></li>
+						<li>Mostrar portapapeles</li>
+						<li class="lineaDivisoria"></li>
+						<li>Caracteres especiales</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Ver</a>
+						<ul class="subMenu">
+						<li class="desactivado">como iconos</li>
+						<li class="desactivado">como lista</li>
+						<li class="desactivado">como columnas</li>
+						<li class="desactivado">como portada</li>
+						<li class="lineaDivisoria"></li>
+						<li>Ordenar</li>
+						<li>Filtrar por...
+							<span class="flecha"></span>
+							<ul class="subMenuAmpliado">
+							<li>Nombre</li>
+							<li>Tipo de archivo</li>
+							<li>Fecha de última modificación</li>
+							<li>Fecha de creación</li>
+							<li>Tamaño</li>
+							</ul>
+						</li>
+						<li>Ordenar por...
+							<span class="flecha"></span>
+							<ul class="subMenuAmpliado">
+							<li>Nombre</li>
+							<li>Tipo de archivo</li>
+							<li>Fecha de última modificación</li>
+							<li>Fecha de creación</li>
+							<li>Tamaño</li>
+							</ul>
+						</li>
+						<li class="lineaDivisoria"></li>
+						<li class="desactivado">Ocultar ruta</li>
+						<li class="desactivado">Ocultar barra de estado</li>
+						<li class="desactivado">Ocultar Dock</li>
+						<li class="lineaDivisoria"></li>
+						<li class="desactivado">Barra de herramientas</li>
+						<li class="desactivado">Personalizar barra...</li>
+						<li class="lineaDivisoria"></li>
+						<li>Mostrar opciones de vista</li>
+						</ul>    
+					</li>
+					<li>
+						<a href="#">Ir</a>
+						<ul class="subMenu">
+						<li class="desactivado">Volver</li>
+						<li class="desactivado">Avanzar</li>
+						<li>Carpeta padre</li>
+						<li class="lineaDivisoria"></li>
+						<li>Todos los archivos</li>
+						<li>Documentos</li>
+						<li>Escritorio</li>
+						<li>Descargas</li>
+						<li>Mi equipo</li>
+						<li>AirDrop</li>
+						<li>Red</li>
+						<li>Aplicaciones</li>
+						<li>Utilidades</li>
+						<li class="lineaDivisoria"></li>
+						<li>Carpetas recientes
+							<span class="flecha"></span>
+							<ul class="subMenuAmpliado">
+							<li>erastoGayVirus</li>
+							<li>proyectoDAW</li>
+							<li>Simulador MAC</li>
+							<li>Java JDK</li>
+							<li>YPhone</li>
+							<li class="lineaDivisoria"></li>
+							<li>Limpiar menú</li>
+							</ul>
+						</li>
+						<li class="lineaDivisoria"></li>
+						<li>Ir a carpeta...</li>
+						<li>Conectar a un servidor</li>
+						</ul>    
+					</li>
+					<li>
+						<a href="#">Ventana</a>
+						<ul class="subMenu">
+						<li class="desactivado">Minimizar</li>
+						<li class="desactivado">Acercar</li>
+						<li class="desactivado">Caminar entre ventanas</li>
+						<li class="lineaDivisoria"></li>
+						<li>Enviar todo al frente</li>
+						</ul>   
+					</li>
+					<li><a href="#">Ayuda</a></li>
+					</ul>
+				</nav>
+				<nav id="menuSuperiorDerecho">
+					<ul>
+					<li class="wifi">
+						<a href="#">WIFI</a>
+					</li>
+					<li class="tiempo">
+						<ul>
+						<li id="fechaMenu"> </li>
+						<li class="horas"> </li>
+						<li class="separadorHora">:</li>
+						<li class="mins"> </li>
+						</ul>
+					</li>
+					<li class="usuario">
+						<a href="#">Andrei García Cuadra</a>
+					</li>
+					</ul>
+				</nav>
+			</header>
+			<!-- 4.2 Ventanas -->
+			<div id="esteMAC" class="ventana mac">
+				<nav class="controlesDeVentana">
+				<a href="#esteMAC" class="cerrarVentana" data-rel="cerrarVentana">cerrar</a>
+				<a href="#" class="minimizarVentana">minimizar</a>
+				<a href="#" class="maximizarVentana">maximizar</a>
+				</nav>
+				<h1 class="nombreMAC">Sobre este MAC</h1>
+				<div class="contenedor">
+					<div class="subContenedor">
+					<img draggable="false" src="assets/images/escritorio/MacOSX.png" alt="Mac OS 10"/>
+					<div class="masInfo">
+					<p>MAC OS 10</p>
+					<p><a class="boton sobreElPC" href="#">Actualizar</a></p>
+					<ul class="hardware">
+					<li><strong>Procesador</strong> 3.7 GHz Intel Core I7</li>
+					<li><strong>Memoria</strong> 16 GB 2400 DDR4</li>
+					<li><strong>Disco de arranque</strong> Macintosh HD</li>
+					</ul>
+					<p><a class="boton sobreElPC" href="#">Más información</a></p>
+					<div class="copyright">
+					<p>© 1983-2017 Apple, Andrei García Cuadra</p>
+					<p>Todos los derechos reservados.</p>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div> 
+
+			<div id="precaucion" class="ventana precaucion">
+				<div class="tab"></div>
+				<div class="contenedor">
+					<div class="contenedorAlerta">
+					<img src="assets/images/escritorio/alert.png" alt="alert"/>
+					<div class="sobreElPCAlerta">
+					<h2>¡Ayyy!</h2>
+					<p>¡La aplicación no pudo inicializarse correctamente!</p>
+					<a href="#precaucion" class="boton blink" data-rel="cerrarVentana">Cerrar</a>
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="papelera" class="ventana precaucion">
+				<div class="tab"></div>
+				<div class="contenedor">
+					<div class="contenedorAlerta">
+					<img draggable="false" src="assets/images/dock/FinderIcon.png" width="48px" height="48px" alt="alert"/>
+					<div class="sobreElPCAlerta">
+					<h2>¿Estás seguro? ¡Pederás todos los archivos!</h2>
+					<p>Si decides no securizar tu papelera... ¡No podrás recuperar tus archivos eliminados!</p>
+					<a href="#mostrarConfirmacionPapelera" class="boton blink" data-rel="mostrarConfirmacionPapelera">¡Proteger papelera!</a>
+					<a href="#papelera" class="boton simple" data-rel="cerrarVentana">Cancelar</a>
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="virusErasto" class="ventana erasto">
+				<div class="contenedor">
+					<img class="virusErasto" src="assets/images/dock/erasto.png">
+					<p class="hackeado">ESTAS HACKEADO</p>
+				</div>
+			</div>
+
+			<div id="confirmacionPapelera" class="ventana precaucion">
+				<div class="tab"></div>
+				<div class="contenedor">
+					<div class="contenedorAlerta">
+					<img draggable="false" src="assets/images/dock/FinderIcon.png" width="48px" height="48px" alt="alerta"/>
+					<div class="sobreElPCAlerta">
+					<h2>¡Tus archivos han sido protegidos!</h2>
+					<p></p>
+					<a href="#confirmacionPapelera" class="boton simple" data-rel="cerrarVentana">Cancelar</a>
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 4.3 Dock (Barra de aplicaciones de MAC) -->
+			<div id="dock">
+				<ul>
+					<li id="finder">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>Finder</span></em>
+							<img draggable="false" src="assets/images/dock/FinderIcon.png" alt="Finder"/>
+						</a>
+					</li>
+					<li id="launchPad">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>Launchpad</span></em>
+							<img draggable="false" src="assets/images/dock/launchPad.png" alt="Launchpad"/>
+						</a>
+					</li>
+					<li id="erasto">
+						<a href="#virusErasto" data-rel="virusErasto">
+							<em><span>Virus ErastoGay</span></em>
+							<img draggable="false" src="assets/images/dock/erasto.png" alt="Erasto"/>
+						</a>
+					</li>
+					<li id="appStore">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>App Store</span></em>
+							<img draggable="false" src="assets/images/dock/appstore.png" alt="App Store"/>
+						</a>
+					</li>
+					<li id="safari">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>Safari</span></em>
+							<img draggable="false" src="assets/images/dock/safari.png" alt="Safari"/>
+						</a>
+					</li>
+					<li id="iChat">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>iChat</span></em>
+							<img draggable="false" src="assets/images/dock/ichat.png" alt="iChat"/>
+						</a>
+					</li>
+					<li id="facetime">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>FaceTime</span></em>
+							<img draggable="false" src="assets/images/dock/facetime.png" alt="Facetime"/>
+						</a>
+					</li>
+					<li id="addressBook">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>Libreta de direcciones</span></em>
+							<img draggable="false" src="assets/images/dock/address.png" alt="Libreta de direcciones"/>
+						</a>
+					</li>
+					<li id="multimedia">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>Multimedia</span></em>
+							<img draggable="false" src="assets/images/dock/preview.png" alt="Multimedia"/>
+						</a>
+					</li>
+					<li id="iTunes">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>iTunes</span></em>
+							<img draggable="false" src="assets/images/dock/iTunes.png" alt="iTunes"/>
+						</a>
+					</li>
+					<li id="ajustes">
+						<a href="#precaucion" data-rel="mostrarVentana">
+							<em><span>Ajustes</span></em>
+							<img draggable="false" src="assets/images/dock/preferences.png" alt="Ajustes"/>
+						</a>
+					</li>
+					<li id="papelera">
+						<a href="#papelera" data-rel="mostrarVentanaPapelera">
+							<em><span>Papelera</span></em>
+							<img draggable="false" src="assets/images/dock/papelera.png" alt="Papelera"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+	</section>
+	<footer><!-- No hay footer, sólo contenido y contenido. No tiene sentido poner aquí el footer ya que no hay navegación estática. Aún así, creado por Andrei García Cuadra. --></footer>
+</body>
+</html>

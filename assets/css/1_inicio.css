@@ -1,0 +1,146 @@
+/*----- Animaciones -----*/
+@-webkit-keyframes iniciarCarga { /* Transición de negro a pantalla de carga de MAC */
+	/* Animación del 0 al 10% de la carga total de los segundos definidos al llamar a la animación */
+	0%, 10% {
+		/* Establecer fondo negro */
+		background: #000;
+		/* Hacer visible esta capa */
+		visibility: visible;
+		/* Eliminar la opacidad de herencia */
+		opacity: 1;
+		/* Traer la capa al frente */
+		z-index: 100
+	}
+	/* Animación del 11 al 12% de la carga total de los segundos definidos al llamar a la animación */
+	11%, 12% {
+		/* Establecer fondo blanco */
+		background: #fff;
+	}
+	/* Animación del 13 al 96% de la carga total de los segundos definidos al llamar a la animación */
+	13%, 96% {
+		/* Hacer visible esta capa a lo largo de la animación */
+		visibility: visible;
+		/* Eliminar la opacidad de herencia, y evitar que se desvanezca el fondo a lo largo de la animación */
+		opacity: 1;
+		/* Mantener fondo blanco a lo largo de la animación */
+		background: #fff;
+		/* Traer la capa al frente a lo largo de la animación */
+		z-index: 100
+	}
+	/* Animación al final de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Eliminar opacidad para no mostrar capa */
+		opacity: 0;
+		/* Enviar capa al fondo */
+		z-index: -100;
+		/* Eliminar la visibilidad de la capa */
+		visibility: hidden
+	}
+}
+
+@-webkit-keyframes logoPantallaDeCarga { /* Superponer logo en pantalla de carga de MAC */
+	/* Animación del 0 al 99% de la carga total de los segundos definidos al llamar a la animación */
+	0%, 99% {
+		/* Evitar que sea visible hasta que finalice la carga */
+		visibility: hidden;
+		/* Evitar que sea visible hasta que finalice la carga */
+		opacity: 0
+	}
+	/* Animación al final de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Mostrar cuando la carga haya finalizado */
+		visibility: visible;
+		/* Mostrar cuando la carga haya finalizado */
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes imagenCargaPantallaDeCarga { /* Superponer imagen de carga en pantalla de carga de MAC */
+	/* Animación del 0 al 19% de la carga total de los segundos definidos al llamar a la animación */
+	0%, 19% {
+		/* Ocultar al inicio de la carga*/
+		visibility: hidden;
+		/* Ocultar al inicio de la carga*/
+		opacity: 0
+	}
+	/* Animación del 20 al 99% de la carga total de los segundos definidos al llamar a la animación */
+	20%, 99% {
+		/* Mostrar cuando la carga este en transcurso */
+		visibility: visible;
+		/* Mostrar cuando la carga este en transcurso */
+		opacity: 1
+	}
+	/* Animación al final de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Ocultar al final de la carga*/
+		visibility: hidden;
+		/* Ocultar al final de la carga*/
+		opacity: 0
+	}
+}
+
+/*----- Diseño -----*/
+.pantallaDeCarga { /* Capa principal de carga de MAC */
+	/* Ocultar cursor al arrancar */
+	cursor: none;
+	/* Pantalla en negro simulando el momento antes de pulsar el botón de encendido */
+	background: #000;
+	/* Ajustar medidas a la pantallacon unidades relativas */
+	position: absolute;
+	/* Ajustar medidas de anchura a la pantallacon unidades relativas */
+	width: 100%;
+	/* Ajustar medidas de altura a la pantallacon unidades relativas */
+	height: 100%;
+	/* Ajustar visibilidad para no solapar capas */
+	visibility: hidden;
+	/* Traer capa al frente cuando finalice la anterior animación */
+	z-index: 0;
+	/* Animar el fondo para que desaparezca el fondo negro y empiece a ser blanco simulando el inicio */
+	-webkit-animation: iniciarCarga 14s linear forwards
+}
+
+.pantallaDeCarga .logoDeApple { /* Definir logo en la página de carga de MAC */
+	/* Definir posición absoluta para poder usar medidas absolutas de modo responsive */
+	position: absolute;
+	/* Definir ancho del logotipo de Apple */
+	width: 120px;
+	/* Definir alto del logotipo de Apple */
+	height: 120px;
+	/* Definir posición horizontal al centro */
+	left: 50%;
+	/* Definir posición vertical al centro */
+	top: 50%;
+	/* Solucionar problema de posicionamiento por el tamaño de la imagen */
+	margin-left: -60px;
+	/* Solucionar problema de posicionamiento por el tamaño de la imagen */
+	margin-top: -60px;
+	/* Definir la imagen de fondo */
+	background: url(../images/pantallaCarga/logo.png) center no-repeat;
+	/* Ajustar visibilidad para no solapar capas */
+	visibility: hidden;
+	/* Animar el fondo para que aparezca el logotipo desvaneciendo */
+	-webkit-animation: logoPantallaDeCarga 0.3s 2s linear forwards
+}
+
+.pantallaDeCarga .imagenCargando { /* Definir imagen de cargando bajo el logo de apple */
+	/* Definir la posición absoluta para poder usar medidas absolutas */
+	position: absolute;
+	/* Definir ancho de la imagen de carga */
+	width: 36px;
+	/* Definir alto de la imagen de carga */
+	height: 39px;
+	/* Definir posición horizontal al centro */
+	left: 50%;
+	/* Definir posición vertical hacia abajo para que se posicione bajo el logo */
+	top: 75%;
+	/* Solucionar problema de posicionamiento por el tamaño de la imagen */
+	margin-left: -18px;
+	/* Solucionar problema de posicionamiento por el tamaño de la imagen */
+	margin-top: -19px;
+	/* Definir la imagen de fondo */
+	background: url(../images/pantallaCarga/cargando.gif) no-repeat;
+	/* Ajustar visibilidad para no solapar capas */
+	visibility: hidden;
+	/* Animar el fondo para que aparezca la imagen de carga y tras la carga se vaya desvaneciendo */
+	-webkit-animation: imagenCargaPantallaDeCarga 8s 2s linear forwards
+}

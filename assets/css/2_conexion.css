@@ -1,0 +1,1132 @@
+/*----- Animaciones -----*/
+@-webkit-keyframes iniciarPantallaDeConexion { /* Animación previa a la pantalla de conexión */
+	/* Animación del 0 al 96% de la carga total de los segundos definidos al llamar a la animación */
+	0%, 96% {
+		/* No visualizar en este periodo de la carga */
+		visibility: hidden;
+		/* No visualizar en este periodo de la carga */
+		opacity: 0
+	}
+	/* Animación del 97 al 99% de la carga total de los segundos definidos al llamar a la animación */
+	97%, 99% {
+		/* Visualizar en este periodo de la carga */
+		opacity: 1
+	}
+	/* Animación al final de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Enviar al frente */
+		z-index: 0;
+		/* Dejar la pantalla visible */
+		visibility: visible
+	}
+}
+
+@-webkit-keyframes moverLogoApple { /* Mover el logo hacia arriba tras finalizar carga */
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Centrar verticalmente */
+		top: 50%
+	}
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Enviar algo más arriba del centro */
+		top: 25%
+	}
+}
+
+@-webkit-keyframes cargarPerfiles { /* Cargar imágenes de perfil */
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Ajustar opacidad absoluta */
+		opacity: 0
+	}
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Ajustar opacidad nula */
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes ocultarConexion { /* Ocultar input de contraseña */
+	/* Animación del 0 al 10% de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Ajustar opacidad absoluta */
+		opacity: 1
+	}
+	/* Animación del 0 al 10% de la carga total de los segundos definidos al llamar a la animación */
+	99% {
+		/* Ajustar opacidad nula */
+		opacity: 0
+	}
+	/* Animación del 0 al 10% de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Ajustar visiblidad nula */
+		visibility:hidden;
+		/* Mantener opacidad absoluta */
+		opacity: 0
+	}
+}
+
+@-webkit-keyframes mostrarConexion {/* Mostrar input de contraseña */
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Estado oculto la conexión */
+		opacity: 0
+	}
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Mostrar completamente la conexión */
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes probarConexion { /* Probar la conexión con la contraseña introducida */
+	/* Animación del 0 al 10% de la carga total de los segundos definidos al llamar a la animación */
+	0%, 94% {
+		/* Estado activo de la conexión */
+		opacity: 1
+	}
+	/* Animación del 0 al 10% de la carga total de los segundos definidos al llamar a la animación */
+	95%, 100% {
+		/* Ocultar completamente la conexión */
+		opacity: 0
+	}
+}
+
+@-webkit-keyframes errorDeConexion { /* Agita input de contraseña si la contraseña es incorrecta */
+	/* Animación del 0 al 10% de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Mover al centro */
+		-webkit-transform: translateX(0px)
+	}
+	/* Animación del 10 al 20% de la carga total de los segundos definidos al llamar a la animación */
+	20% {
+		/* Mover a la derecha, ya que hemos ajustado previamente float:left y el margen sería a la derecha*/
+		-webkit-transform: translateX(20px)
+	}
+	/* Animación del 20 al 30% de la carga total de los segundos definidos al llamar a la animación */
+	30% {
+		/* Mover al centro */
+		-webkit-transform: translateX(0px)
+	}
+	/* Animación del 30 al 40% de la carga total de los segundos definidos al llamar a la animación */
+	40% {
+		/* Mover a la izquierda, ya que hemos ajustado previamente float:left y el margen sería a la derecha*/
+		-webkit-transform: translateX(-20px)
+	}
+	/* Animación del 40 al 50% de la carga total de los segundos definidos al llamar a la animación */
+	50% {
+		/* Mover al centro */
+		-webkit-transform: translateX(0px)
+	}
+	/* Animación del 50 al 60% de la carga total de los segundos definidos al llamar a la animación */
+	60% {
+		/* Mover a la derecha, ya que hemos ajustado previamente float:left y el margen sería a la derecha*/
+		-webkit-transform: translateX(20px)
+	}
+	/* Animación del 60 al 70% de la carga total de los segundos definidos al llamar a la animación */
+	70% {
+		/* Mover al centro */
+		-webkit-transform: translateX(0px)
+	}
+	/* Animación del 70 al 80% de la carga total de los segundos definidos al llamar a la animación */
+	80% {
+		/* Mover a la izquierda, ya que hemos ajustado previamente float:left y el margen sería a la derecha*/
+		-webkit-transform: translateX(-20px)
+	}
+	/* Animación del 80 al 90% de la carga total de los segundos definidos al llamar a la animación */
+	90% {
+		/* Mover al centro */
+		-webkit-transform: translateX(0px)
+	}
+	/* Animación del 90 al 100% de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Mantener al centro */
+		-webkit-transform: translateX(0px)
+	}
+}
+@-webkit-keyframes cambiarDeConectarAEscritorio { /* Si la conexión es satisfactoria volver al panel */
+	/* Animación transitoria al 0% de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Mostrar la pantalla */
+		opacity: 1;
+		/* Mantener al frente */
+		z-index: 0;
+		/* Mantener visible */
+		visibility: visible
+	}
+	/* Animación transitoria al 99% de la carga total de los segundos definidos al llamar a la animación */
+	99% {
+		/* Ocultar en pantalla */
+		opacity: 0;
+		/* Mantener al frente */
+		z-index: 0;
+		/* Hacer invisible */
+		visibility: visible
+	}
+	/* Animación al final de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Enviar al fondo */
+		z-index: -1;
+		/* Mantener no visible */
+		opacity: 0;
+		/* Mantener invisible */
+		visibility: hidden
+	}
+}
+
+@-webkit-keyframes cargarEscritorio { /* Evanescer escritorio */
+	/* Animación inicial de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Empezar con el elemento en el fondo */
+		z-index: -1;
+		/* Escalar: en este paso es nulo */
+		-webkit-transform: scale(0,0);
+		/* Ocultar elemento */
+		opacity: 0;
+		/* No mostrar elemento */
+		visibility: hidden
+	}
+	/* Animación del 1 al 50% de la carga total de los segundos definidos al llamar a la animación */
+	1% {
+		/* Mantener elemento: un poco más al frente */
+		z-index: 0;
+		/* Escalar: en este paso es nulo */
+		-webkit-transform: scale(0,0);
+		/* El elemento sigue estando oculto */
+		opacity: 0;
+		/* Hacemos visible el elemento */
+		visibility: visible
+	}
+	/* Animación del 50 al 100% de la carga total de los segundos definidos al llamar a la animación */
+	50% {
+		/* Mantener el elemento */
+		z-index:0;
+		/* Escalar: en este paso se agrnda a la mitad total del elemento */
+		-webkit-transform: scale(0.5,0.5);
+		/* El elemento ya es visible */
+		opacity: 1;
+		/* Mantenemos visible la capa */
+		visibility: visible
+	}
+	/* Animación al final de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* El elemento se mantiene al frente */
+		z-index: 0;
+		/* Escalar: en este paso es eltotal del elemento */
+		-webkit-transform: scale(1,1);
+		/* El elemento se mantiene visible */
+		opacity: 1;
+		/* Capa visible */
+		visibility: visible
+	}
+}
+
+@-webkit-keyframes cargarBarraMenuEscritorio { /* Cargar barra del escritorio */
+	/* Animación del 0 al 95% de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Ajustar visibilidad nula */
+		opacity: 0;
+		/* Ajustar visibilidad nula */
+		visibility: visible
+	}
+	/* Animación del 95 al 100% de la carga total de los segundos definidos al llamar a la animación */
+	95% {
+		/* Ajustar visibilidad nula */
+		opacity: 0;
+		/* Permitir visibilidad de la capa */
+		visibility: visible
+	}
+	/* Animación al final de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Ajustar visibilidad completa */
+		opacity: 1;
+		/* Permitir visibilidad de la capa */
+		visibility: visible
+	}
+}
+
+@-webkit-keyframes cargarVentanasEscritorio { /* Cargar ventanas del escritorio */
+	/* Animación del 0 al 99% de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Ajustar visibilidad nula */
+		opacity: 0;
+		/* Permitir visibilidad de la capa */
+		visibility: visible
+	}
+	/* Animación del 99 al 100% de la carga total de los segundos definidos al llamar a la animación */
+	99% {
+		/* Ajustar visibilidad nula */
+		opacity: 0;
+		/* Permitir visibilidad de la capa */
+		visibility: visible
+	}
+	/* Animación al final de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Ajustar visibilidad completa */
+		opacity: 1;
+		/* Permitir visibilidad de la capa */
+		visibility: visible
+	}
+}
+@-webkit-keyframes apagarEquipo { /* Transición de negro a pantalla de carga de MAC */
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Permitir visibilidad de la capa */
+		visibility: visible;
+		/* Ajustar fondo de pantalla a color blanco */
+		background: #000;
+		/* No visualizar fondo */
+		opacity: 0;
+		/* Mantener al frente */
+		z-index: 0
+	}
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Permitir visibilidad de la capa */
+		visibility: visible;
+		/* Ajustar fondo de pantalla a color blanco */
+		background: #000;
+		/* Visualizar fondo */
+		opacity: 1;
+		/* Mantener al frente */
+		z-index: 0
+	}
+}
+@-webkit-keyframes reiniciarEquipo { /* Transición de negro a pantalla de carga de MAC */
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Permitir visibilidad de la capa */
+		visibility: visible;
+		/* Ajustar fondo de pantalla a color blanco */
+		background: #000;
+		/* No visualizar fondo */
+		opacity: 0;
+		/* Mantener al frente */
+		z-index: 0
+	}
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Permitir visibilidad de la capa */
+		visibility: visible;
+		/* Ajustar fondo de pantalla a color blanco */
+		background: #000;
+		/* Visualizar fondo */
+		opacity: 1;
+		/* Mantener al frente */
+		z-index: 0
+	}
+}
+@-webkit-keyframes hibernarEquipo { /* Transición de negro a pantalla de carga de MAC */
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	0% {
+		/* Permitir visibilidad de la capa */
+		visibility: visible;
+		/* Ajustar fondo de pantalla a color blanco */
+		background: #000;
+		/* No visualizar fondo */
+		opacity: 0;
+		/* Mantener al frente */
+		z-index: 0
+	}
+	/* Animación progresiva de la carga total de los segundos definidos al llamar a la animación */
+	100% {
+		/* Permitir visibilidad de la capa */
+		visibility: visible;
+		/* Ajustar fondo de pantalla a color blanco */
+		background: #000;
+		/* Visualizar fondo */
+		opacity: 1;
+		/* Mantener al frente */
+		z-index: 0
+	}
+}
+/*----- Diseño -----*/
+.validarConexion { /* Capa de conexión */
+	/* Fondo de la capa blanco */
+	background-color: #fff
+}
+.capaDeCarga { /* Capa de carga */
+	/* Establecer cursor común de MAC */
+	cursor:  url(../cursor/normal.cur) 2 2, pointer;
+	/* Posición absoluta para que no se desplace con otras capas */
+	position: absolute;
+	/* Establecer dos imágenes de fondo solapadas a la vez, cada una con sus atributos */
+	background: url(../images/conexion/gradient.png) no-repeat center, url(../images/escritorio/background.jpg) 100% #000;
+	/* Definir el ancho total para mejor responsive */
+	width: 100%;
+	/* Definir el alto total para mejor responsive */
+	height: 100%;
+	/* Mantener al frente */
+	z-index: 0;
+	/* No visualizar por defecto */
+	visibility: hidden;
+	/* Visualizar capa completamente */
+	opacity: 1;
+	/* Animar el fondo para que desaparezca la pantalla de carga y aparezca la de conexión */
+	-webkit-animation: iniciarPantallaDeConexion 0.5s 12s linear forwards;
+	/* No permitir selección de texto */
+	-webkit-user-select: none
+}
+
+.difuminarFondo {
+	z-index: -10;
+  /* All the background image supports */
+  background-image: -webkit-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 65%, rgba(69, 77, 91, 0.6) 80%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(50px);
+  top: -70px;
+  right: -70px;
+  left: -70px;
+  padding: 70px;
+}
+
+.difuminarFondo:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1001;
+  background-image: -webkit-linear-gradient(339deg, rgba(43, 40, 50, 0.8) 0%, rgba(43, 40, 50, 0.4) 66%, rgba(0, 0, 0, 0.05) 75%);
+  -webkit-filter: blur(70px);
+}
+.barraSuperior { /* Ajustes de la barra superior */
+	/* Establecer fondo transparente */
+	background: transparent;
+	/* Definir el ancho total para mejor responsive */
+	width: 100%;
+	/* Definir el alto total con medida absoluta ya que no variará en función de la pantalla */
+	height: 21px;
+	/* Posición siempre la misma */
+	position: fixed;
+	/* No permitir selección de texto */
+	-webkit-user-select: none;
+	/* Ajustar tipo de fuente */
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
+}
+.barraSuperior nav.navegacion { /* Ajustar la posición de las imágenes de la barra superior */
+	/* Posición absoluta de los elementos para que no interfiera con los otros */
+	position: absolute;
+	/* Margen de 10 píxeles respecto a la derecha */
+	right: 10px;
+	/* No tener margen respecto al top */
+	top: 0
+}
+.barraSuperior nav.navegacion ul { /* Definir propiedades de la lista */
+	/* Eliminar margen */
+	margin: 0; 
+	/* Eliminar márgenes internos */
+	padding: 0
+}
+.barraSuperior nav.navegacion ul li { /* Definir propiedades de los elementos de la lista */
+	/* Alinear a la izquierda */
+	float: left;
+	/* Definir el alto de cada elemento */
+	height: 21px;
+	/* Interlineado entre elementos */
+	line-height: 25px;
+	/* Posición a relativa para que varíe en función de el anterior elemento */
+	position: relative
+}
+.barraSuperior nav.navegacion ul li.tiempo { /* Ajustar las propiedades de la hora */
+	/* Tamaño de fuente */
+	font-size: 14px; 
+	/* Color de la fuente */
+	color: #e2e2e2;
+	/* Margen interno derecho de 10px */
+	padding: 0 10px
+}
+.barraSuperior nav.navegacion ul li.wifi { /* Ajustar las propiedades del wifi */
+	/* Imagen de fondo con el tamaño */
+	background: url(../images/conexion/wifi.png) 10px 2px no-repeat;
+	/* Ajustar ancho de imagen */
+	width: 22px;
+	/* Ajustar alto de imagen */
+	height: 18px;
+	/* Margen superior */
+	top: 3px;
+	/* Margen interno derecho */
+	padding:0 5px
+}
+
+.capaDeCarga .logoDeAppleConexión { /* Posición del logo de Apple */
+	/* Ajustar posición absoluta para esta capa */
+	position: absolute;
+	/* Ajustar ancho de manera absoluta para que la imagen no se vea pixelada */
+	width: 120px;
+	/* Ajustar alto de manera absoluta para que la imagen no se vea pixelada */
+	height: 120px;
+	/* Alinear al centro horizontalmente */
+	left: 50%;
+	/* Alinear al centro verticalmente */
+	top: 50%;
+	/* Solucionar problemas de posición y tamaño para que se alinee al centro */
+	margin-left: -60px;
+	/* Solucionar problemas de posición y tamaño para que se alinee al centro */
+	margin-top: -60px;
+	/* Definir la imagen del logo */
+	background: url(../images/conexion/logo.png) center no-repeat;
+	/* Animación que mueve el logo cuando finalice la carga y se inicie la pantalla de conexión */
+	-webkit-animation: moverLogoApple 0.5s 13.5s linear forwards
+}
+.capaDeCarga .perfilDeUsuario {
+	/* No motrar capa por defecto */
+	opacity: 0;
+	/* Animación que anima la carga de los perfiles */
+	-webkit-animation: cargarPerfiles 0.3s 13.7s linear forwards
+}
+.capaDeCarga .perfil1 {
+	/* Posición absoluta para que no se solape con las demás capas */
+	position: absolute;
+	/* Definir ancho en píxeles */
+	width: 98px;
+	/* Definir alto en píxeles */
+	height: 98px;
+	/* Ajustar horizontalmente al centro */	
+	left: 50%;
+	/* Ajustar verticalmente al centro */	
+	top: 50%;
+	/* Solucionar problemas de posición y tamaño para que se alinee al centro */	
+	margin-left: -49px;
+	/* Solucionar problemas de posición y tamaño para que se alinee al centro */	
+	margin-top: -49px
+}
+
+.capaDeCarga .perfil2 {
+	/* Posición absoluta para que no se solape con las demás capas */
+	position: absolute;
+	/* Definir ancho en píxeles */
+	width: 98px;
+	/* Definir alto en píxeles */
+	height: 98px;
+	/* Alinear horizontalmente a la izquierda del avatar principal */
+	left: 40%;
+	/* Alinear verticalmente en la misma posición que el avatar principal */
+	top: 50%;
+	/* Solucionar problemas de posición y tamaño para que se alinee al centro */	
+	margin-top: -49px
+}
+
+.capaDeCarga .perfil3 {
+	/* Posición absoluta para que no se solape con las demás capas */
+	position: absolute;
+	/* Definir ancho en píxeles */
+	width: 98px;
+	/* Definir alto en píxeles */
+	height: 98px;
+	/* Alinear horizontalmente a la derecha del avatar principal */
+	right: 40%;
+	/* Alinear verticalmente en la misma posición que el avatar principal */
+	top: 50%;
+	/* Solucionar problemas de posición y tamaño para que se alinee al centro */	
+	margin-top: -49px
+}
+
+.capaDeCarga .hibernar {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	/* Definir posición absoluta para establecer la imagen */
+	position: absolute;
+	/* Definir ancho en píxeles */
+	width: 32px;
+	/* Definir alto en píxeles */
+	height: 32px;
+	/* Establecer color de letra */
+	color: #aaaaaa;
+	/* Establecer fuente de la letra */
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	/* Alinear ligeramente a la izquierda */
+	left: 41%;
+	/* Darle margen respecto al borde inferior */
+	bottom: 10%;
+	/* Solucionar problema por tamaño de imagen en alineación */
+	margin-top: -49px;
+	/* Enviar al fondo */
+	z-index: -1
+}
+.capaDeCarga .hibernar .texto {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	/* Alinear un poco abajo respecto a la imagen */
+	margin-top: 10px;
+	/* Alinear a la izquierda */
+	margin-left: -8px
+}
+.capaDeCarga .reiniciar {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	/* Definir posición absoluta para el icono */
+	position: absolute;
+	/* Definir ancho en píxeles */
+	width: 32px;
+	/* Definir alto en píxeles */
+	height: 32px;
+	/* Establecer color de letra */
+	color: #aaaaaa;
+	/* Establecer fuente de la letra */
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	/* Alinear ligeramente a la derecha */
+	left: 49%;
+	/* Darle margen respecto al borde inferior */
+	bottom: 10%;
+	/* Solucionar problema por tamaño de imagen en alineación */
+	margin-top: -49px;
+	/* Enviar al fondo */
+	z-index: -1
+}
+.capaDeCarga .reiniciar .texto {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	/* Alinear un poco abajo respecto a la imagen */
+	margin-top: 10px;
+	/* Alinear a la izquierda */
+	margin-left: -8.5px
+}
+.capaDeCarga .apagar {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	/* Definir posición absoluta para el icono */
+	position: absolute;
+	/* Definir ancho en píxeles */
+	width: 32px;
+	/* Definir alto en píxeles */
+	height: 32px;
+	/* Establecer color de letra */
+	color: #aaaaaa;
+	/* Establecer fuente de la letra */
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	/* Alinear ligeramente a la derecha */
+	left: 57%;
+	/* Darle margen respecto al borde inferior */
+	bottom: 10%;
+	/* Solucionar problema por tamaño de imagen en alineación */
+	margin-top: -49px;
+	/* Enviar al fondo */
+	z-index: -1
+}
+.capaDeCarga .apagar .texto {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer;
+	/* Alinear un poco abajo respecto a la imagen */
+	margin-top: 10px;
+	/* Alinear a la izquierda */
+	margin-left: -3px
+}
+
+.imagenPerfil {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer !important;
+	/* Definir ancho en píxeles */
+    width: 90px;
+	/* Definir alto en píxeles */
+	height: 90px;
+	/* Alinear horizontalmente al centro */
+	left: 50%;
+	/* Alinear verticalmente al centro */
+	top: 50%;
+	/* Solucionar problema por tamaño de imagen en alineación */
+    margin-left: -49px;
+	/* Solucionar problema por tamaño de imagen en alineación */
+    margin-top: -49px;
+	/* Mostrar como un bloque */
+    display: block;
+	/* Establecer la redondez de los bordes al máximo */
+    border-radius: 100%;
+	/* Establecer márgenes internos para evitar colisiones de texto */
+    padding: 4px;
+	/* Establecer color de fondo. En este caso se usa un gradient, el cual reproduce la escala de color entre los dos introducidos */
+	background: -webkit-linear-gradient(#fdfdfd, #c9c9c9);
+	/* Establecer bordes básicos de la imagen */
+	border: 1px solid #434448;
+	/* Establecer posición absoluta para mejor responsive */
+	position: absolute
+}
+.imagenPerfil img {
+	/* Mostrar como bloque */
+    display: block;
+	/* Redondear bordes al máximo */
+    border-radius: 100%;
+	/* Establecer la posición como relativa para que se superponga a la capa anterior */
+	position: relative;
+	/* Definir ancho en píxeles */
+	width: 91px;
+	/* Definir alto en píxeles */
+	height: 91px;
+	/* Enviar ligeramente a la derecha */
+	left: -1px;
+	/* Enviar ligeramente abajo */
+	top:- 1px
+}
+.imagenPerfil:before, .imagenPerfil:after {
+	/* Simular contenido para que se muestre el efecto espejo */
+    content: '';
+	/* Definir ancho en píxeles */
+    width: 90px;
+	/* Definir alto en píxeles */
+    height: 90px;
+	/* Mostrar como un bloque */
+    display: block;
+	/* Establecer la imagen como absoluta para mayor responsive */
+    position: absolute;
+	/* Enviar ligeramente arriba */
+    top: 3px;
+	/* Enviar ligeramente a la izquierda */
+    left: 3px;
+	/* Enviar capa al frente */
+    z-index: 5;
+	/* Deshabilitar eventos del puntero para JavaScript */
+    pointer-events: none;
+	/* Redondear bordes al máximo */
+    border-radius: 100%
+}
+.imagenPerfil:before {
+	/* Establecer bordes */
+	border: 1px solid #434448
+}
+.imagenPerfil:after {
+	/* Establecer múltiples gradientes de fondo */
+	background: -webkit-linear-gradient(-45deg, rgba(255,255,255,.0), rgba(255,255,255,0.33) 50%, rgba(255,255,255,.0) 50%)
+}
+.permitirOcultarConexion {
+	/* Establecer fondo blanco con algo de opacidad */
+    background: rgba(0,0,0,0.35);
+	/* Establecer sombra de caja para los diferentes bordes en blanco con mucha opacidad */
+	box-shadow: 0 0 5px 2px rgba(0,0,0,0.3);
+	/* Establecer borde del 100% */
+    border-radius: 100%;
+	/* Definir alto en píxeles */
+    height: 98px;
+	/* Enviar ligeramente a la izquierda */
+    left: 1px;
+	/* Definir posición absoluta para mayor responsive */
+    position: absolute;
+	/* Enviar ligeramente arriba */
+    top: 1px;
+	/* Definir ancho en píxeles */
+    width: 98px;
+    /* Traer la capa al frente */
+	z-index: 9;
+	/* Establecer visibilidad nula por opacidad */
+	opacity: 0
+}
+
+.mostrar{
+	/* No mostrar capa */
+	display: none
+}
+.ocultar:target + .mostrar {
+	/* Mostrar los elementos de las cajas en línea */
+	display: inline
+}
+.ocultar:target{
+	/* No mostrar capa */
+	display: none
+}
+.intercambiador {
+	/* Animación para mostrar cuadro de input password */
+	-webkit-animation: mostrarConexion 0.25s ease-in forwards
+}
+.ocultar:target ~ .intercambiador {
+	/* Animación para ocultar cuadro de input password */
+	-webkit-animation: ocultarConexion 0.25s ease-in-out forwards
+}
+.ocultar:target ~ .nombreUsuario {
+	/* Ocultar el elemento */
+	visibility: hidden;
+	/* Ocultar el elemento */
+	opacity: 0;
+	/* Animación para hacer visible la capa */
+	transition: visibility 0s, opacity 0.3s linear
+ }
+.mostrar:target ~ .nombreUsuario {
+	/* Mover la caja al centro por si la animación no había finalizado cuando se cerró la caja */
+	-webkit-transform: translateX(0px);
+	/* Animación para mostrar la caja evanescentemente */
+	-webkit-transition: all 0.3s linear
+}
+.ocultar:active ~ .permitirOcultarConexion, .mostrar:active ~ .permitirOcultarConexion {
+	/* Establecer la capa como visible */
+	opacity: 1
+}
+
+.ocultar {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer !important;
+	/* Establecer fondo blanco y con opacidad completa */
+	background: rgba(0,0,0,0);
+	/* Definir ancho en píxeles */
+	width: 98px;
+	/* Definir alto en píxeles */
+	height: 98px;
+	/* Establecer posición absoluta para mayor responsive */
+	position: absolute;
+	/* Alinear horizontalmente al centro */
+	left: 50%;
+	/* Alinear verticalmente abajo */
+	top: 70%;
+	/* Solucionar problema por tamaño de imagen en alineación */
+    margin-left: -49px;
+	/* Solucionar problema por tamaño de imagen en alineación */
+    margin-top: -68px;
+	/* Traer la capa al frente */
+	z-index: 10
+}
+.mostrar {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer !important;
+	/* Establecer fondo blanco y con opacidad completa */
+	background: rgba(0,0,0,0);
+	/* Definir ancho en píxeles */
+	width: 98px;
+	/* Definir alto en píxeles */
+	height: 98px;
+	/* Establecer posición absoluta para mayor responsive */
+	position: absolute;
+	/* Alinear horizontalmente al centro */
+	left: 50%;
+	/* Alinear verticalmente abajo */
+	top: 70%;
+	/* Solucionar problema por tamaño de imagen en alineación */
+    margin-left: -49px;
+	/* Solucionar problema por tamaño de imagen en alineación */
+    margin-top: -68px;
+	/* Traer la capa al frente */
+	z-index: 10
+}
+
+.capaDeCarga .perfilDeUsuario .nombreUsuario{
+	/* Establecer posición absoluta para mayor responsive */
+	position: absolute;
+	/* Alinear horizontalmente al centro */
+	left: 50%;
+	/* Alinear completamente arriba */
+	top: 100%;
+	/* Establecer márgenes para los bordes */
+	margin: 10px 0 0 -90px;
+	/* Definir ancho en píxeles */
+	width: 184px;
+	/* Alinear texto al centro */
+	text-align: center;
+	/* Establecer tamaño de letra */
+	font-size: 12px;
+	/* Establecer color de letra */
+	color: #fff;
+	/* Establecer espaciado entre letras */
+	letter-spacing: 1px;
+	/* Establecer sombra del texto en las diferentes posiciones */
+	text-shadow: 1px 1px 2px #000;
+	/* Desactivar selección de texto */
+	-webkit-user-select: none
+}
+input[type=password]::selection{ 
+	background:rgba(124,196,255,0.7);
+}
+input[type=password] {
+	/* Mostrar cursor de Apple */
+	cursor:  url(../cursor/select.cur) 2 2, pointer !important;
+	/* Definir ancho en píxeles */
+	width: 154px;
+	/* Definir alto en píxeles */
+	height: 24px;
+	/* Establecer sombreado de caja */
+	box-shadow: 0 0 2px 3px #4189c3;
+	/* Establecer bordes redondeados para la caja */
+	border-radius: 3px;
+	/* Establecer bordes para la caja */
+	border: 1px solid rgba(0,0,0,0);
+	/* Establecer márgenes internos de la caja */
+	padding: 2px 26px 2px 5px;
+	/* Establecer tipo de fuente para el input únicamente */
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif
+}
+input[type=password].valid {
+	/* Establecer que no exista sombra para la caja si es válida la conexión */
+	box-shadow: none;
+	/* Establecer color del texto */
+	color: #6d6d6d;
+	/* Establecer bordes de la caja y su respectivo color */
+	border-top: 1px solid #343434;
+	/* Establecer bordes de la caja y su respectivo color */
+	border-left: 1px solid #343434;
+	/* Establecer bordes de la caja y su respectivo color */
+	border-right: 1px solid #515151;
+	/* Establecer bordes de la caja y su respectivo color */
+	border-bottom: 1px solid #515151
+}
+input[type=password]::-webkit-input-placeholder  {
+	/* Establecer tamaño de la caja */
+	font-size: 12px;
+	/* Establecer color de letra */
+	color: #6d6d6d;
+	/* Establecer espaciado entre letras */
+	letter-spacing:0
+}
+input[type=password]:focus ~ .sugerenciaContraseña {
+	/* Establecer elemento visible */
+	opacity:1;
+	/* Escalar caja a su tamaño original */
+	-webkit-transform: scale(1,1);
+	/* Establecer animación para que dicho escalamiento se produzca de forma progresiva */
+	-webkit-transition: all 0.3s ease-in-out
+}
+.sugerenciaContraseña {
+	/* Mantener escalamiento original del navegador */
+	-webkit-transform: scale(0,0);
+	/* Establecer punto de origen de dicha transforación */
+	-webkit-transform-origin: top center;
+	/* No mostrar capa */
+	opacity: 0;
+	/* Establecer posicionamiento absoluto para mayor responsive */
+	position: absolute;
+	/* Alinear texto al centro */
+	text-align: center;
+	/* Definir ancho en píxeles */
+	width: 330px;
+	/* Definir alto en píxeles */
+	height: 25px;
+	/* Establecer alinamiento horizontal al centro */
+	left: 50%;
+	/* Solucionar error del tamaño de la caja */
+	margin-left: -165px;
+	/* Solucionar error del tamaño de la caja */
+	top: 47px;
+	/* Establecer color de fondo */
+	background: #f2f0eb;
+	/* Establecer un pequeño índice de redondez en los bordes */
+	border-radius: 3px;
+	/* Establecer bordes absolutos con algo de opacidad */
+	border: 1px solid rgba(52,52,52,0.35);
+	/* Establecer sombra para la caja con algo de opacidad */
+	box-shadow: 0px 7px 25px rgba(0,0,0,0.65)
+}
+.sugerenciaContraseña p {
+	/* Establecer tamaño de fuente */
+	font-size: 12px;
+	/* Establecer color de la letra */
+	color: #646464;
+	/* Estanblecer un ligero margen superior */
+	margin-top: 8px
+}
+.sugerenciaContraseña:before,
+.sugerenciaContraseña:after
+{
+	/* Simular que la capa posee contenido para forzar su muestreo */
+	content: '';
+	/* Establecer imagen en absolute para mejor responsive */
+	position: absolute;
+	/* Traer al frente al máximo */
+	z-index: 1000;
+	/* Alinear al centro horizontalmente */
+	left: 50%;
+	/* Enviar ligeramente abajo */
+	top: -14px;
+	/* Enviar ligeramente a la derecha */
+	margin-left: -14px;
+	/* Definir ancho en píxeles */
+	width: 0;
+	/* Definir alto en píxeles */
+	height: 0;
+	/* Establecer borde izquierdp y tipo transparente */
+	border-left: 14px solid transparent;
+	/* Establecer borde derecho y tipo transparente */
+	border-right: 14px solid transparent;
+	/* Establecer borde inferior y tipo transparente */
+	border-bottom: 14px solid #f2f0eb
+}
+.sugerenciaContraseña:after
+{
+	/* Establecer color del borde superior */
+	border-top-color: #343434
+}
+.sugerenciaContraseña:before
+{
+	/* Establecer borde izquierdo y tipo transparente */
+	border-left: 15px solid transparent;
+	/* Establecer borde derecho y tipo transparente */
+	border-right: 15px solid transparent;
+	/* Establecer borde inferior y tipo transparente */
+	border-bottom: 15px solid rgba(52,52,52,0.35);
+	/* Enviar ligeramente abajo */
+	top: -15px;
+	/* Enviar ligeramente a la derecha */
+	margin-left:-15px
+}
+.capaDeCarga .perfilDeUsuario .intercambiador {
+	/* Establecer capa de forma absoluta para mejor responsive */
+	position: absolute;
+	/* Alinear horizontalmente al centro */
+	left: 50%;
+	/* Alinear verticalmente completamente arriba */
+	top: 100%;
+	/* Solucionar problema por tamaño de imagen en alineación */
+	margin-left: -90px;
+	/* Solucionar problema por tamaño de imagen en alineación */
+	margin-top: 45px
+}
+.error {
+	/* Establecer animación para mover caja de conexión (input password) */
+	-webkit-animation: errorDeConexion 0.35s linear
+}
+.capaDeCarga .perfilDeUsuario .intercambiador .submit{
+	/* Establecer cursor común de MAC */
+	cursor:  url(../cursor/normal.cur) 2 2, pointer !important;
+	/* Establecer imagen en absolute para mayor responsive */
+	position: absolute;
+	/* Mover ligeramente arriba */
+	top: 3px;
+	/* Mover ligeramente a la derecha */
+	right: 2px;
+	/* Establecer imagen de fondo */
+	background: url(../images/conexion/submit.png) no-repeat;
+	/* Definir ancho en píxeles */
+	width: 24px;
+	/* Definir alto en píxeles */
+	height: 24px;
+	/* No mostrar la primera línea del párrafo, ya que esta saldría fuera de la pantalla */
+	text-indent: -9999px;
+	/* Deshabilitar bordes */
+	border: none;
+	/* Establecer márgenes internos */
+	padding: 0
+}
+.capaDeCarga .perfilDeUsuario .intercambiador .submit:active {
+	/* Mostrar cursor puntero de Apple */
+	cursor:  url(../cursor/mouse.cur) 2 2, pointer !important;
+	/* Establecer la posición del fondo sobre la imagen para coger solo parte de ella */
+	background-position: 0 -24px
+}
+
+.capaDeCarga.initLog {
+	/* Animación para empezar a mostrar escritorio */
+	-webkit-animation: cambiarDeConectarAEscritorio 0.4s 1.5s linear forwards;
+	/* Establecer la capa como visible */
+	visibility: visible;
+	/* Establecer la capa como visible */
+	opacity: 1
+}
+.capaDeCarga.initLogExit {
+	/* Ocultar */
+	visibility: hidden;
+	/* Ocultar */
+	opacity: 0;
+	/* Deshabilitar animaciones */
+	-webkit-animation: none
+}
+.charge {
+	/* Imagen de fondo simulando la carga */
+	background: url(../images/conexion/spinner.gif) no-repeat;
+	/* Establecer posición absoluta para evitar colisión de capas */
+	position: absolute;
+	/* Mover ligeramente abajo para centrar */
+	top: 3px;
+	/* Mover ligeramente a la derecha */
+	right: 2px;
+	/* Definir ancho en píxeles */
+	width: 24px;
+	/* Definir alto en píxeles */
+	height: 24px;
+	/* Esta propiedad establece el margen de la primera línea de los párrafos. En este caso ocultamos esa línea */
+	text-indent: -9999px;
+	/* Establecer que no haya bordes */
+	border: none;
+	/* Establecer margen interno en 0 */
+	padding: 0;
+	/* Animar el fondo para simular la rueda de prueba de conexión sobre el input password */
+	-webkit-animation: probarConexion 1.2s linear forwards
+}
+#escritorio:target #head {
+	/* Establecer cursor de cargando mientras se finaliza la animación del escritorio */
+	cursor:  url(../cursor/busy.ani) 2 2, pointer;
+	/* Animar el fondo para que desaparezca y se muestren la barra del escritorio */
+	-webkit-animation: cargarBarraMenuEscritorio 0.5s 1.9s linear forwards
+}
+#escritorio:target .ventana {
+	/* Establecer cursor de cargando mientras se finaliza la animación del escritorio */
+	cursor:  url(../cursor/busyAndNormal.ani) 2 2, pointer;
+	/* Animar el fondo para que desaparezca y se muestren las ventanas del escritorio */
+	-webkit-animation: cargarVentanasEscritorio 0.2s 2.8s linear
+}
+#escritorio:target {
+	/* Establecer cursor de cargando mientras se finaliza la animación del escritorio */
+	cursor:  url(../cursor/busy.ani) 2 2, pointer;
+	/* Animar el fondo para que desaparezca y se muestre el escritorio */
+	-webkit-animation: cargarEscritorio 0.3s 1.6s linear forwards
+}
+
+
+.apagarSistema:target { /* Apagar sistema */
+	/* Ocultar cursor al arrancar */
+	cursor: none;
+	/* Pantalla en negro simulando el momento antes de pulsar el botón de encendido */
+	background: #000;
+	/* Ajustar medidas a la pantallacon unidades relativas */
+	position: absolute;
+	/* Definir ancho relativo para mayor responsive */
+	width: 100%;
+	/* Definir alto relativo para mayor responsive */
+	height: 100%;
+	/* Ajustar visibilidad para no solapar capas */
+	visibility: hidden;
+	/* Mostrar capa al frente */
+	z-index: 0;
+	/* Animar el fondo para que desaparezca el fondo negro y empiece a ser blanco simulando el inicio */
+	-webkit-animation: apagarEquipo 3.0s forwards
+}
+.apagarSistema:target * { /* Apagar sistema */
+	/* Mostrar como bloque */
+	display: none;
+	/* Ajustar color de fondo a blanco */
+	background-color: #000
+}
+
+.reiniciarSistema:target { /* Reiniciar sistema */
+	/* Ocultar cursor al arrancar */
+	cursor: none;
+	/* Pantalla en negro simulando el momento antes de pulsar el botón de encendido */
+	background: #000;
+	/* Ajustar medidas a la pantallacon unidades relativas */
+	position: absolute;
+	/* Definir ancho en porcentaje para que sea más responsive */
+	width: 100%;
+	/* Definir alto en porcentaje para que sea más responsive */
+	height: 100%;
+	/* Ajustar visibilidad para no solapar capas */
+	visibility: hidden;
+	/* Mostrar capa al frente */
+	z-index: 0;
+	/* Animar el fondo para que desaparezca el fondo negro y empiece a ser blanco simulando el inicio */
+	-webkit-animation: reiniciarEquipo 3.0s forwards
+}
+.reiniciarSistema:target * { /* Reiniciar sistema */
+	/* Mostrar como bloque */
+	display: none;
+	/* Ajustar color de fondo a blanco */
+	background-color: #000
+}
+
+.hibernarSistema:target { /* Hibernar sistema */
+	/* Ocultar cursor al arrancar */
+	cursor: none;
+	/* Pantalla en negro simulando el momento antes de pulsar el botón de encendido */
+	background: #000;
+	/* Ajustar medidas a la pantallacon unidades relativas */
+	position: absolute;
+	/* Definir ancho en porcentaje para que sea más responsive */
+	width: 100%;
+	/* Definir alto en porcentaje para que sea más responsive */
+	height: 100%;
+	/* Ajustar visibilidad para no solapar capas */
+	visibility: hidden;
+	/* Mostrar capa al frente */
+	z-index: 0;
+	/* Animar el fondo para que desaparezca el fondo negro y empiece a ser blanco simulando el inicio */
+	-webkit-animation: hibernarEquipo 3.0s forwards
+}
+.hibernarSistema:target * { /* Hibernar sistema */
+	/* Mostrar como bloque */
+	display: none;
+	/* Ajustar color de fondo a blanco */
+	background-color: #000
+}

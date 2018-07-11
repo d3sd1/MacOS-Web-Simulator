@@ -1,0 +1,118 @@
+* { /* Establecer unos atributos de diseño común para todos los elementos de la web */
+	/* Establecer un margen nulo */
+	margin: 0;
+	/* Establecer un margen interno nulo */
+	padding: 0;
+	/* Establecer un borde nulo */
+	border: 0;
+	/* Establecer un borde interno nulo */
+	outline: 0;
+	/* Establecer un tamaño de fuente relativo para tener un diseño mas responsive */
+	font-size: 100%;
+	/* Establecer un fondo transparente por defecto */
+	background: transparent
+}
+
+body { /* Establecer el diseño para la etiqueta body  */
+	/* Establecer un margen de línea de 1 */
+	line-height: 1;
+	/* Establecer la fuente para la letra */
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	/* Establecer tamaño de letra por defecto */
+	font-size: 12px;
+	/* Definir el ancho de la pantalla al 100% (relativo) para un diseño más responsive */
+	width: 100%;
+	/* Definir el alto de la pantalla al 100% (relativo) para un diseño más responsive */
+	height: 100%;
+	/* Definir que pasará si un elemento sobresale de el elemento padre */
+	overflow: hidden;
+	/* Definir margen nulo */
+	margin: 0;
+	/* Definir margen interno nulo */
+	padding: 0;
+	/* Definir color de fondo */
+	background: #000
+}
+
+ol, ul { /* Diseños de listas */
+	/* Eliminar la ordenación de listas */
+	list-style: none
+}
+
+:focus { /* Establecer un diseño para los elementos al ser seleccionados */
+	/* Establecer un borde interno nulo */
+	outline: 0
+}
+
+table{ /* Establecer diseño por defecto de las tablas */
+	/* Eliminar bordes internos */
+	border-collapse: collapse;
+	/* Eliminar espaciado de bordes */
+	border-spacing: 0
+}
+
+::selection { /* Establecer el diseño para las selecciones de texto */
+	/* Establecer un color azul con algo de transparencia */
+	background: rgba(124,196,255,0.7)
+}
+
+/*------ Navegador no compatible -----*/
+
+noscript { /* Definir los estilos para la etiqueta noscript, que sólo se mostrará si JavaScript está deshabilitado en el navegador */
+	/* Establecer una imagen de fondo doble con sus respectivos estilos de repetición, posicionamiento y color en caso de que no se pueda cargar la imagen */
+	background: url(../images/gradient.png) no-repeat center, url(../images/background.png) repeat left top #000;
+	/* Definir el ancho de la pantalla al 100% (relativo) para un diseño más responsive */
+	width: 100%;
+	/* Definir el alto de la pantalla al 100% (relativo) para un diseño más responsive */
+	height: 100%;
+	/* Definirle una posición absoluta para evitar que se muestren otros elementos */
+	position: absolute;
+	/* Traer al frente */
+	z-index: 0
+}
+
+noscript .logoNavegadorNoCompatible { /* Establecer el logo en la caja de incompatibilidad */
+	/* Definir la posición absoluta para que sea más responsive */
+	position: absolute;
+	/* Definir el ancho del logo */
+	width: 120px;
+	/* Definir el alto del logo */
+	height: 120px;
+	/* Centrar horizontalmente */
+	left: 50%;
+	/* Centrar verticalmente */
+	top: 50%
+}
+
+noscript.cajaNavegadorNoCompatible { /* Crear una caja para notificar al usuario que su navegador no es compatible */
+	/* Definir la posición absoluta para que sea más responsive */
+	position: absolute;
+	/* Centrar horizontalmente */
+	left: 50%;
+	/* Centrar verticalmente un poco más abajo del centro */
+	top: 70%;
+	/* Alinear texto al centro */
+	text-align: center;
+	/* Aumentar el tamaño de letra */
+	font-size: 24px;
+	/* Aumentar el espaciado entre lineas */
+	line-height: 40px;
+	/* Cambiar color de las letras, con algo de opacidad */
+	color: rgba(0,0,0,0.69);
+	/* Establecer una pequeña sombra con algo de transparencia para las letras */
+	text-shadow: 0 1px 1px rgba(153,153,153,0.45)
+}
+
+noscript.cajaNavegadorNoCompatible a { /* Establecer el estilo de los enlaces de la caja */
+	/* Eliminar estilos por defecto de los enlaces */
+	text-decoration: none;
+	/* Cambiar color del texto con algo de opacidad */
+	color: rgba(190,190,190,0.95);
+	/* Establecer una pequeña sombra con algo de transparencia para las letras */
+	text-shadow: 0 1px 1px rgba(153,153,153,0.45)
+}
+
+noscript.cajaNavegadorNoCompatible a:hover { /* Establecer el estilo de los enlaces de la caja al pasar el cursor por encima */
+	/* Establecer una pequeña sombra con algo de transparencia para las letras */
+	text-shadow: 0 0px 5px rgba(153,153,153,0.95)
+}
